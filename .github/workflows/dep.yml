@@ -11,8 +11,8 @@ jobs:
        uses: actions/checkout@v4
     -  name: build pages
        uses: actions/build-pages@v3
-    -  name: copy artifacts
-       uses: actions/copy-pages-artifact@v4
+    -  name: upload artifacts
+       uses: actions/upload-pages-artifact@v4
        with:
          path: '.'
     -  name: deploy pages
