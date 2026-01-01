@@ -1,0 +1,29 @@
+name: Deploy Static Website
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Path to your static website files
+        path: '.'  # Change this if your files are in a subdirectory
+        
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
+      with:
+        # Optional: Specify a custom GitHub Pages branch (default: gh-pages)
+        # target-branch: gh-pages
