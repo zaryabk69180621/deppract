@@ -12,7 +12,7 @@ jobs:
     -  name: configure pages
        uses: actions/configure-pages@v4
     -  name: upload pages
-       uses: actions/upload-pages-artifacts@v3
+       uses: actions/upload-pages-artifact@v3
        with:
          path: '.'
     -  name: deploy pages
