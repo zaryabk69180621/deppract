@@ -10,7 +10,7 @@ jobs:
     -  name: checkout
        uses: actions/checkout@v4
     -  name: build pages
-       uses: actions/build-pages@v3
+       uses: actions/configure-pages@v3
     -  name: upload artifacts
        uses: actions/upload-pages-artifact@v4
        with:
