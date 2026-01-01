@@ -1,29 +1,23 @@
-name: deploy static website
+name: deploystaticwebsitev2
 on:
-  push: 
-    branches: [main, master]
+  push:
+    branches: [main,master]
   workflow_dispatch:
-permissions:
-  pages: write
-  id-token: write
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    -  name: checkout repository
+    -  name: checkout
        uses: actions/checkout@v4
-    -  name: configure pages
-       uses: actions/configure-pages@v4
-    -  name: upload pages
-       uses: actions/upload-pages-artifact@v3
+    -  name: build pages
+       uses: actions/build-pages@v3
+    -  name: copy artifacts
+       uses: actions/copy-pages-artifact@v4
        with:
          path: '.'
     -  name: deploy pages
        uses: actions/deploy-pages@v4
-       
+permissions:
+  pages: write
+  id-token: write
     
-   
-   
-
-  
-  
