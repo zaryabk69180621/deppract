@@ -3,6 +3,8 @@ on:
   push: 
     branches: [main, master]
   workflow_dispatch:
+permissions:
+  pages: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
